@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>815CEBAA-1806-41F9-A5DB-6AE73F2BE64D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Prototype_Chat</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>53BD6148820A1796C01B58CD9C624614045CE808</key>
+		<string>https://bitbucket.org/davidgourde/clientleger.git</string>
+		<key>98B01547160000693F085DF42B069B980E1B8AD4</key>
+		<string>https://bitbucket.org/clientleger/prototype_chat.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Prototype_Chat.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>53BD6148820A1796C01B58CD9C624614045CE808</key>
+		<string>../../../clientleger</string>
+		<key>98B01547160000693F085DF42B069B980E1B8AD4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/clientleger/prototype_chat.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>98B01547160000693F085DF42B069B980E1B8AD4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>98B01547160000693F085DF42B069B980E1B8AD4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>chat_prototype</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>53BD6148820A1796C01B58CD9C624614045CE808</string>
+			<key>IDESourceControlWCCName</key>
+			<string>clientleger</string>
+		</dict>
+	</array>
+</dict>
+</plist>
