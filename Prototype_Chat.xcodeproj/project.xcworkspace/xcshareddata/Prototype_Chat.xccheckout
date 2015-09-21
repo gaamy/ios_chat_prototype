@@ -12,7 +12,7 @@
 	<dict>
 		<key>53BD6148820A1796C01B58CD9C624614045CE808</key>
 		<string>https://bitbucket.org/davidgourde/clientleger.git</string>
-		<key>98B01547160000693F085DF42B069B980E1B8AD4</key>
+		<key>D371D847130109C4C1CA5B54AFE87717AD13F0EF</key>
 		<string>https://bitbucket.org/clientleger/prototype_chat.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
@@ -21,7 +21,7 @@
 	<dict>
 		<key>53BD6148820A1796C01B58CD9C624614045CE808</key>
 		<string>../../../clientleger</string>
-		<key>98B01547160000693F085DF42B069B980E1B8AD4</key>
+		<key>D371D847130109C4C1CA5B54AFE87717AD13F0EF</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -29,14 +29,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>98B01547160000693F085DF42B069B980E1B8AD4</string>
+	<string>D371D847130109C4C1CA5B54AFE87717AD13F0EF</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>98B01547160000693F085DF42B069B980E1B8AD4</string>
+			<string>D371D847130109C4C1CA5B54AFE87717AD13F0EF</string>
 			<key>IDESourceControlWCCName</key>
 			<string>chat_prototype</string>
 		</dict>
