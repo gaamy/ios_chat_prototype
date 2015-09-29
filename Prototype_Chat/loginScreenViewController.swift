@@ -14,7 +14,7 @@ import Darwin.C
 class loginScreenViewController: UIViewController {
 
     @IBOutlet weak var lblMessage: UILabel!
-    var client:TCPClient!
+    
     
     
     override func viewDidLoad() {
@@ -42,14 +42,14 @@ class loginScreenViewController: UIViewController {
     @IBAction func connectToChat(sender: UIButton) {
         
         // checking for invalid entrys
-        if (host.text == nil || host.text.isEqual("")){
-            println("-I need the ip address to connect to the host!-")
+        if (host.text == nil || host.text!.isEqual("")){
+            print("-I need the ip address to connect to the host!-")
         }
-        else if(port.text == nil || port.text.toInt() == nil){
-            println("-If you realy want me to connect, give me the port!-")
+        else if(port.text == nil || Int(port.text!) == nil){
+            print("-If you realy want me to connect, give me the port!-")
         }
         else if(userName.text == nil || userName.text == ""){
-            println("-You forgot your username?-")
+            print("-You forgot your username?-")
             usernameReminder1.hidden = false
             
         }else if(true){//TODO: check if the connection is possible
@@ -69,11 +69,11 @@ class loginScreenViewController: UIViewController {
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "idLoginSegue") {
-            var chatViewController : ViewController = segue.destinationViewController as! ViewController
+            let chatViewController : ViewController = segue.destinationViewController as! ViewController
             
-            chatViewController.host = self.host.text
-            chatViewController.port = self.port.text.toInt()!
-            chatViewController.userName = self.userName.text
+            chatViewController.host = self.host.text!
+            chatViewController.port = Int(self.port.text!)!
+            chatViewController.userName = self.userName.text!
         }
     }
     
@@ -101,7 +101,7 @@ class loginScreenViewController: UIViewController {
             }
         }
         
-        return super.segueForUnwindingToViewController(toViewController, fromViewController: fromViewController, identifier: identifier)
+        return super.segueForUnwindingToViewController(toViewController, fromViewController: fromViewController, identifier: identifier)!
     }
     
 }

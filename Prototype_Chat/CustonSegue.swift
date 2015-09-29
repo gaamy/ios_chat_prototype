@@ -12,8 +12,8 @@ class CustonSegue: UIStoryboardSegue {
     
     override func perform() {
         //Assign the source and destination views to local variables
-        var firstVCView = self.sourceViewController.view as UIView!
-        var secondVCView = self.destinationViewController.view as UIView!
+        let firstVCView = self.sourceViewController.view as UIView!
+        let secondVCView = self.destinationViewController.view as UIView!
         
         //get the creen width and height
         let screenWidth = UIScreen.mainScreen().bounds.size.width
@@ -35,7 +35,7 @@ class CustonSegue: UIStoryboardSegue {
             }) {(Finished) -> Void in
                 
                 self.sourceViewController.presentViewController(
-                    self.destinationViewController as! UIViewController,
+                    self.destinationViewController ,
                     animated: false,
                     completion: nil
                 )

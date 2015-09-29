@@ -73,7 +73,7 @@ class ViewController: UIViewController, NSStreamDelegate  {
     @output:
     */
     func joinChat(user: String) {
-        var response: String = "iam:\(user)"
+        let response: String = "\(user)"
         let data: NSData = response.dataUsingEncoding(NSASCIIStringEncoding)!
         outputStream.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
     }
@@ -89,7 +89,7 @@ class ViewController: UIViewController, NSStreamDelegate  {
         //send the message to the server
         
         //TODO: verifier que la connection a ete etablie avant d'envoyer le message
-        var response: String = "msg:\(monTexte.text)"
+        let response: String = "!!20!1 \(monTexte.text)"
         monTexte.text = ""
         
         let data: NSData = response.dataUsingEncoding(NSASCIIStringEncoding)!
@@ -132,12 +132,12 @@ class ViewController: UIViewController, NSStreamDelegate  {
             if ( aStream == inputStream){
                 
                 while (inputStream.hasBytesAvailable){
-                    var len = inputStream.read(&buffer, maxLength: buffer.count)
+                    let len = inputStream.read(&buffer, maxLength: buffer.count)
                     if(len > 0){
-                        var output = NSString(bytes: &buffer, length: buffer.count, encoding: NSUTF8StringEncoding)
+                        let output = NSString(bytes: &buffer, length: buffer.count, encoding: NSUTF8StringEncoding)
                         if (output != ""){
-                            println(output!)
-                            var stringOutput = output as! String
+                            print(output!)
+                            let stringOutput = output as! String
                             updateChatView(stringOutput)
                             NSLog("server said: %@", output!)
                             
@@ -146,7 +146,7 @@ class ViewController: UIViewController, NSStreamDelegate  {
                 }
             }
             break
-        case NSStreamEvent.allZeros:
+        case NSStreamEvent():
             NSLog("allZeros")
             break
         case NSStreamEvent.OpenCompleted:
@@ -167,6 +167,16 @@ class ViewController: UIViewController, NSStreamDelegate  {
     */
     func updateChatView(message:String){
         
+        //we need to get rid of the begining of the message that contains the size of the package
+        // Exemple: !!12!salut  -> salut
+       
+        let splittedMessage = message.characters.split {$0 == " "}
+        
+        print(splittedMessage[1])
+        print(splittedMessage[2])
+        print(splittedMessage[3])
+        print(splittedMessage[4])
+        print(splittedMessage[5])
         let date = NSDate()
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
@@ -175,6 +185,7 @@ class ViewController: UIViewController, NSStreamDelegate  {
         
     }
 
+    
     
     
     

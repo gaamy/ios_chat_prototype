@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D371D847130109C4C1CA5B54AFE87717AD13F0EF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D371D847130109C4C1CA5B54AFE87717AD13F0EF" : 0,
+    "53BD6148820A1796C01B58CD9C624614045CE808" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "815CEBAA-1806-41F9-A5DB-6AE73F2BE64D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D371D847130109C4C1CA5B54AFE87717AD13F0EF" : "chat_prototype",
+    "53BD6148820A1796C01B58CD9C624614045CE808" : "clientleger"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Prototype_Chat",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Prototype_Chat.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/davidgourde\/clientleger.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "53BD6148820A1796C01B58CD9C624614045CE808"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/clientleger\/prototype_chat.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D371D847130109C4C1CA5B54AFE87717AD13F0EF"
+    }
+  ]
+}

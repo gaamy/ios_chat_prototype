@@ -13,9 +13,6 @@
 		2DCDCC181B987C19002B1723 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCDCC171B987C19002B1723 /* Images.xcassets */; };
 		2DCDCC1B1B987C19002B1723 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DCDCC191B987C19002B1723 /* LaunchScreen.xib */; };
 		2DCDCC271B987C19002B1723 /* Prototype_ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCDCC261B987C19002B1723 /* Prototype_ChatTests.swift */; };
-		FC25B0E21BA76242008B9E13 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B0DF1BA76242008B9E13 /* ysocket.swift */; };
-		FC25B0E31BA76242008B9E13 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = FC25B0E01BA76242008B9E13 /* ytcpsocket.c */; };
-		FC25B0E41BA76242008B9E13 /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B0E11BA76242008B9E13 /* ytcpsocket.swift */; };
 		FC9619BE1BA5D6410049C196 /* loginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9619BD1BA5D6410049C196 /* loginScreenViewController.swift */; };
 		FC9619C21BA625E00049C196 /* CustonSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9619C11BA625E00049C196 /* CustonSegueUnwind.swift */; };
 		FC9619C41BA626020049C196 /* CustonSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9619C31BA626020049C196 /* CustonSegue.swift */; };
@@ -43,9 +40,6 @@
 		2DCDCC251B987C19002B1723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DCDCC261B987C19002B1723 /* Prototype_ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prototype_ChatTests.swift; sourceTree = "<group>"; };
 		FC25B0DE1BA76241008B9E13 /* Prototype_Chat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prototype_Chat-Bridging-Header.h"; sourceTree = "<group>"; };
-		FC25B0DF1BA76242008B9E13 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
-		FC25B0E01BA76242008B9E13 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
-		FC25B0E11BA76242008B9E13 /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
 		FC9619BD1BA5D6410049C196 /* loginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginScreenViewController.swift; sourceTree = "<group>"; };
 		FC9619C11BA625E00049C196 /* CustonSegueUnwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustonSegueUnwind.swift; sourceTree = "<group>"; };
 		FC9619C31BA626020049C196 /* CustonSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustonSegue.swift; sourceTree = "<group>"; };
@@ -91,9 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				FC9619C31BA626020049C196 /* CustonSegue.swift */,
-				FC25B0DF1BA76242008B9E13 /* ysocket.swift */,
-				FC25B0E01BA76242008B9E13 /* ytcpsocket.c */,
-				FC25B0E11BA76242008B9E13 /* ytcpsocket.swift */,
 				FC9619C11BA625E00049C196 /* CustonSegueUnwind.swift */,
 				FC9619BD1BA5D6410049C196 /* loginScreenViewController.swift */,
 				FC25B0DE1BA76241008B9E13 /* Prototype_Chat-Bridging-Header.h */,
@@ -176,6 +167,8 @@
 		2DCDCC031B987C19002B1723 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "David Gourde";
 				TargetAttributes = {
@@ -232,14 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC25B0E21BA76242008B9E13 /* ysocket.swift in Sources */,
 				2DCDCC131B987C19002B1723 /* ViewController.swift in Sources */,
 				FC9619BE1BA5D6410049C196 /* loginScreenViewController.swift in Sources */,
 				2DCDCC111B987C19002B1723 /* AppDelegate.swift in Sources */,
-				FC25B0E41BA76242008B9E13 /* ytcpsocket.swift in Sources */,
 				FC9619C41BA626020049C196 /* CustonSegue.swift in Sources */,
 				FC9619C21BA625E00049C196 /* CustonSegueUnwind.swift in Sources */,
-				FC25B0E31BA76242008B9E13 /* ytcpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

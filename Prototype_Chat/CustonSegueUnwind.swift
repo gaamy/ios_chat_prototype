@@ -13,8 +13,8 @@ class CustonSegueUnwind: UIStoryboardSegue {
     
     override func perform(){
         //Assign the sources and destination to local variables
-        var secondVCView = self.sourceViewController.view as UIView!
-        var firstVCView = self.destinationViewController.view as UIView!
+        let secondVCView = self.sourceViewController.view as UIView!
+        let firstVCView = self.destinationViewController.view as UIView!
         
         let screenHeight = UIScreen.mainScreen().bounds.size.height
         
