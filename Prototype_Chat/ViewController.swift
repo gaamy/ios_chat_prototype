@@ -84,27 +84,25 @@ class ViewController: UIViewController, NSStreamDelegate  {
         outputStream.close()
     }
     
-    
+    /**
+    *Envoy le message au serveur
+    * Une entete est ajoutee au message
+    * Entete: !!sizeOfTcpMessage!
+    */
     @IBAction func envoyer(sender: AnyObject) {
         //send the message to the server
         
         //TODO: verifier que la connection a ete etablie avant d'envoyer le message
-        let response: String = "!!20!1 \(monTexte.text)"
+        
+        let size : Int = 7 + monTexte.text!.characters.count
+        let response: String = "!!\(size)!\(monTexte.text!)"
+        
         monTexte.text = ""
         
         let data: NSData = response.dataUsingEncoding(NSASCIIStringEncoding)!
         
         self.outputStream.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
         
-        /*
-        if success{
-            println("message sent successfully")
-        }
-        else {
-            println("message not sent (connexion error)")
-            println(errorMsg)
-        }
-        */
         
         monTexte.text = "";
     }
@@ -170,13 +168,17 @@ class ViewController: UIViewController, NSStreamDelegate  {
         //we need to get rid of the begining of the message that contains the size of the package
         // Exemple: !!12!salut  -> salut
        
-        let splittedMessage = message.characters.split {$0 == " "}
+        let splittedMessage = message.characters.split {$0 == "!"}
+
+        for part in splittedMessage{
+            print("!!!!!!!!!!!!!!!debug message---- \(part)")
+        }
         
-        print(splittedMessage[1])
-        print(splittedMessage[2])
-        print(splittedMessage[3])
-        print(splittedMessage[4])
-        print(splittedMessage[5])
+       // print("debug message \(splittedMessage[1])")
+        //print(splittedMessage[2])
+
+
+
         let date = NSDate()
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
