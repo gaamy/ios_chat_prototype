@@ -9,13 +9,13 @@
 import UIKit
 
 //this view controller represents the chat main view controller
-class ViewController: UIViewController, NSStreamDelegate  {
+class ViewController: UIViewController, NSStreamDelegate, UITextFieldDelegate  {
     
     //UI elements
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var monTexte: UITextField!
     @IBOutlet weak var messages: UITextView!
-    
+    @IBOutlet weak var senderButton: UIButton!
     
     //imported elements
     var host = ""
@@ -29,9 +29,7 @@ class ViewController: UIViewController, NSStreamDelegate  {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //connectToTCPServer(self.host, port:self.port,userName: self.userName)
-        
+        monTexte.delegate = self
         initNetworkCommunication(self.host as CFString, connectionPort:UInt32(self.port))
         
         joinChat(self.userName)
@@ -46,11 +44,12 @@ class ViewController: UIViewController, NSStreamDelegate  {
 
     //-------Networking------//
 
-    //Client Socket
+    //Client Socket stream
     var inputStream: NSInputStream!
     var outputStream: NSOutputStream!
+    var connected : Bool = false
     
-    func initNetworkCommunication(connectionHost: CFString, connectionPort: UInt32) {
+    func initNetworkCommunication(connectionHost: CFString, connectionPort: UInt32)  {
         var readstream : Unmanaged<CFReadStream>?
         var writestream : Unmanaged<CFWriteStream>?
         
@@ -82,10 +81,11 @@ class ViewController: UIViewController, NSStreamDelegate  {
         
         inputStream.close()
         outputStream.close()
+        connected = false
     }
     
     /**
-    *Envoy le message au serveur
+    * Envoy le message au serveur
     * Une entete est ajoutee au message
     * Entete: !!sizeOfTcpMessage!
     */
@@ -103,12 +103,28 @@ class ViewController: UIViewController, NSStreamDelegate  {
     }
     
   
+    /*
+    * detecte la touche "entre" et envoie le message
+    * le focus reviens automatiquement
+    */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == self.monTexte {
+            textField.resignFirstResponder()
+            envoyer(senderButton)
+            monTexte.becomeFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+
     
     /**stream()
     handle the NSStream events.
     It's here where the incomming TCP messages are handled
     */
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
+        
         switch (eventCode){
         case NSStreamEvent.ErrorOccurred:
             NSLog("ErrorOccurred")
@@ -145,6 +161,10 @@ class ViewController: UIViewController, NSStreamDelegate  {
             break
         case NSStreamEvent.OpenCompleted:
             NSLog("OpenCompleted")
+            if !connected{
+                updateChatView("Connected to chat\n")
+                connected = true
+            }
             break
         case NSStreamEvent.HasSpaceAvailable:
             NSLog("HasSpaceAvailable")
@@ -175,7 +195,7 @@ class ViewController: UIViewController, NSStreamDelegate  {
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
         formatter.stringFromDate(date)
-        messages.text! = formatter.stringFromDate(date) + "\t" + unwraped + "\n" + messages.text!
+        messages.text! = formatter.stringFromDate(date) + ":  " + unwraped + "\n" + messages.text!
         
     }
 

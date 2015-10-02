@@ -59,9 +59,12 @@ class loginScreenViewController: UIViewController {
             print("-No username? Use your imagination plz!-")
             usernameReminder1.hidden = false
             
-        }else if(true){//TODO: check if the connection is possible
+        }else if(true){
+            
+            //check if the connection is possible
             //connect
             //disconect
+            
             usernameReminder1.hidden = true
             warningMessage.hidden = true
             showChatView()
@@ -111,5 +114,7 @@ class loginScreenViewController: UIViewController {
         
         return super.segueForUnwindingToViewController(toViewController, fromViewController: fromViewController, identifier: identifier)!
     }
+    
+
     
 }
