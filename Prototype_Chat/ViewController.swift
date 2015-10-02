@@ -93,18 +93,13 @@ class ViewController: UIViewController, NSStreamDelegate  {
         //send the message to the server
         
         //TODO: verifier que la connection a ete etablie avant d'envoyer le message
-        
-        let size : Int = 7 + monTexte.text!.characters.count
-        let response: String = "!!\(size)!\(monTexte.text!)\n"
-        
-        monTexte.text = ""
-        
-        let data: NSData = response.dataUsingEncoding(NSUTF8StringEncoding)!
-        
-        self.outputStream.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
-        
-        
-        monTexte.text = "";
+        if monTexte.text! != ""{
+            let size : Int = 7 + monTexte.text!.characters.count
+            let response: String = "!!\(size)!\(monTexte.text!)\n"
+            monTexte.text = ""
+            let data: NSData = response.dataUsingEncoding(NSUTF8StringEncoding)!
+            self.outputStream.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
+        }
     }
     
   
@@ -117,6 +112,7 @@ class ViewController: UIViewController, NSStreamDelegate  {
         switch (eventCode){
         case NSStreamEvent.ErrorOccurred:
             NSLog("ErrorOccurred")
+            showFirstViewController()
             break
         case NSStreamEvent.EndEncountered:
             NSLog("EndEncountered")
@@ -194,9 +190,6 @@ class ViewController: UIViewController, NSStreamDelegate  {
         IBAction from
     */
     @IBAction func backToLoginView(sender: UIButton) {
-       
-        inputStream.close()
-        outputStream.close()
         showFirstViewController()
     }
     
@@ -204,6 +197,8 @@ class ViewController: UIViewController, NSStreamDelegate  {
     * show the login screen
     */
     func showFirstViewController() {
+        inputStream.close()
+        outputStream.close()
         self.performSegueWithIdentifier("idFirstSegueUnwind", sender: self)
     }
     
@@ -211,7 +206,7 @@ class ViewController: UIViewController, NSStreamDelegate  {
 
 
 /**
-* Regex qui detecte et enleve les en-tetes serveur !!21!
+* Regex qui detecte et enleve les en-tetes serveur exemple: !!21!
 *
 */
 extension String {

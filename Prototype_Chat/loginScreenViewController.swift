@@ -36,6 +36,7 @@ class loginScreenViewController: UIViewController {
     @IBOutlet weak var host: UITextField!
     @IBOutlet weak var port: UITextField!
     @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var warningMessage: UILabel!
   
     @IBOutlet weak var usernameReminder1: UILabel!
     
@@ -43,19 +44,26 @@ class loginScreenViewController: UIViewController {
         
         // checking for invalid entrys
         if (host.text == nil || host.text!.isEqual("")){
+            warningMessage.text = "-I need the ip address to connect to the host!-"
+            warningMessage.hidden = false
             print("-I need the ip address to connect to the host!-")
         }
         else if(port.text == nil || Int(port.text!) == nil){
+             warningMessage.text = "-If you realy want me to connect, give me the port!-"
+            warningMessage.hidden = false
             print("-If you realy want me to connect, give me the port!-")
         }
         else if(userName.text == nil || userName.text == ""){
-            print("-You forgot your username?-")
+            warningMessage.text = "-No username? Use your imagination plz!-"
+            warningMessage.hidden = false
+            print("-No username? Use your imagination plz!-")
             usernameReminder1.hidden = false
             
         }else if(true){//TODO: check if the connection is possible
             //connect
             //disconect
             usernameReminder1.hidden = true
+            warningMessage.hidden = true
             showChatView()
         }
     }

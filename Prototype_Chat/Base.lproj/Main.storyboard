@@ -158,11 +158,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Type your username ➤" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxb-lh-rCb">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type your username ➤" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxb-lh-rCb">
                                 <rect key="frame" x="68" y="261" width="188" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="9OO-i6-2Y7"/>
-                                    <constraint firstAttribute="width" constant="188" id="9X7-vI-b3r"/>
+                                    <constraint firstAttribute="width" constant="188" id="zrH-Kc-Bjb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.9176925505050505" green="0.15679081212286397" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -191,18 +190,31 @@
                                     <action selector="connectToChat:" destination="S30-2Z-rPP" eventType="touchUpInside" id="6IS-0L-kfX"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3X-io-utA">
+                                <rect key="frame" x="20" y="345" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="u6e-3O-yg6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.15879715433797825" blue="0.20086941565531768" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.23790640782828287" green="0.15566120740346076" blue="0.14922810892090704" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.53664232264512146" blue="0.42950510508278728" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="F3X-io-utA" firstAttribute="centerX" secondItem="k5t-KQ-on8" secondAttribute="centerX" id="0Ya-lu-rlk"/>
                             <constraint firstItem="dbp-dq-Ef2" firstAttribute="leading" secondItem="MnJ-Xy-K7O" secondAttribute="leading" id="0fO-Wf-mDT"/>
                             <constraint firstItem="9ep-T2-Phu" firstAttribute="trailing" secondItem="mm0-AK-hTd" secondAttribute="trailing" id="0ox-Tm-xvl"/>
                             <constraint firstItem="7td-Ka-WHu" firstAttribute="leading" secondItem="FDu-HQ-WGE" secondAttribute="leadingMargin" id="3I1-WR-NmF"/>
+                            <constraint firstItem="F3X-io-utA" firstAttribute="top" secondItem="k5t-KQ-on8" secondAttribute="bottom" constant="20" id="71v-lW-oPo"/>
                             <constraint firstItem="ewY-Eu-bEX" firstAttribute="leading" secondItem="9ep-T2-Phu" secondAttribute="leading" id="FGG-Ep-4me"/>
                             <constraint firstItem="L5Q-0A-DYC" firstAttribute="top" secondItem="a6D-uH-Xs3" secondAttribute="bottom" constant="8" symbolic="YES" id="FMb-X7-25U"/>
                             <constraint firstItem="ewY-Eu-bEX" firstAttribute="centerX" secondItem="7td-Ka-WHu" secondAttribute="centerX" id="HDJ-li-gnQ"/>
                             <constraint firstItem="dbp-dq-Ef2" firstAttribute="top" secondItem="L5Q-0A-DYC" secondAttribute="bottom" constant="65" id="HPc-Z3-IRv"/>
                             <constraint firstItem="MnJ-Xy-K7O" firstAttribute="top" secondItem="dbp-dq-Ef2" secondAttribute="bottom" constant="35" id="IjK-1M-0PH"/>
                             <constraint firstItem="L5Q-0A-DYC" firstAttribute="centerX" secondItem="dbp-dq-Ef2" secondAttribute="centerX" id="J8I-Us-gCs"/>
+                            <constraint firstItem="F3X-io-utA" firstAttribute="leading" secondItem="FDu-HQ-WGE" secondAttribute="leadingMargin" id="KKW-5V-i8s"/>
+                            <constraint firstItem="Bxb-lh-rCb" firstAttribute="top" secondItem="9ep-T2-Phu" secondAttribute="bottom" constant="30" id="NUK-qi-NO6"/>
                             <constraint firstItem="dbp-dq-Ef2" firstAttribute="centerX" secondItem="mm0-AK-hTd" secondAttribute="centerX" id="PDV-dP-BSo"/>
                             <constraint firstItem="k5t-KQ-on8" firstAttribute="top" secondItem="ewY-Eu-bEX" secondAttribute="bottom" constant="8" symbolic="YES" id="Pin-jh-zYu"/>
                             <constraint firstItem="9ep-T2-Phu" firstAttribute="top" secondItem="mm0-AK-hTd" secondAttribute="bottom" constant="26" id="RiB-w3-i0Y"/>
@@ -211,13 +223,13 @@
                             <constraint firstItem="gR8-pd-ioO" firstAttribute="top" secondItem="9ep-T2-Phu" secondAttribute="bottom" constant="8" symbolic="YES" id="Y5p-Ke-bkj"/>
                             <constraint firstItem="mm0-AK-hTd" firstAttribute="top" secondItem="L5Q-0A-DYC" secondAttribute="bottom" constant="83" id="Zy5-g6-VR1"/>
                             <constraint firstItem="7td-Ka-WHu" firstAttribute="trailing" secondItem="FDu-HQ-WGE" secondAttribute="trailingMargin" id="aeA-PT-L1L"/>
-                            <constraint firstItem="Bxb-lh-rCb" firstAttribute="leading" secondItem="FDu-HQ-WGE" secondAttribute="leadingMargin" constant="52" id="bEC-av-wHN"/>
                             <constraint firstItem="9ep-T2-Phu" firstAttribute="leading" secondItem="mm0-AK-hTd" secondAttribute="leading" id="bcM-Fc-ZKx"/>
                             <constraint firstItem="ewY-Eu-bEX" firstAttribute="top" secondItem="9ep-T2-Phu" secondAttribute="bottom" constant="26" id="eEH-fI-wUa"/>
+                            <constraint firstItem="Bxb-lh-rCb" firstAttribute="leading" secondItem="FDu-HQ-WGE" secondAttribute="leadingMargin" constant="48" id="eaz-nV-xGe"/>
+                            <constraint firstItem="Bxb-lh-rCb" firstAttribute="centerY" secondItem="ewY-Eu-bEX" secondAttribute="centerY" id="m9O-qJ-wzc"/>
                             <constraint firstItem="gR8-pd-ioO" firstAttribute="top" secondItem="MnJ-Xy-K7O" secondAttribute="bottom" constant="35" id="nSk-zd-O33"/>
                             <constraint firstItem="ewY-Eu-bEX" firstAttribute="trailing" secondItem="9ep-T2-Phu" secondAttribute="trailing" id="ovB-nu-McE"/>
                             <constraint firstItem="k5t-KQ-on8" firstAttribute="centerX" secondItem="ewY-Eu-bEX" secondAttribute="centerX" id="qQZ-sr-4oj"/>
-                            <constraint firstItem="Bxb-lh-rCb" firstAttribute="top" secondItem="9ep-T2-Phu" secondAttribute="bottom" constant="30" id="wJX-MS-JM4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -231,6 +243,7 @@
                         <outlet property="port" destination="9ep-T2-Phu" id="lJp-rd-4RE"/>
                         <outlet property="userName" destination="ewY-Eu-bEX" id="Gha-Z6-QRH"/>
                         <outlet property="usernameReminder1" destination="Bxb-lh-rCb" id="bZa-EC-Ooh"/>
+                        <outlet property="warningMessage" destination="F3X-io-utA" id="nlY-Qm-NgZ"/>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="idLoginSegue" customClass="CustonSegue" customModule="Prototype_Chat" customModuleProvider="target" id="g83-c0-98e"/>
                     </connections>
                 </viewController>
