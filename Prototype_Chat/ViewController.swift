@@ -74,7 +74,7 @@ class ViewController: UIViewController, NSStreamDelegate  {
     */
     func joinChat(user: String) {
         let response: String = "\(user)"
-        let data: NSData = response.dataUsingEncoding(NSASCIIStringEncoding)!
+        let data: NSData = response.dataUsingEncoding(NSUTF8StringEncoding)!
         outputStream.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
     }
     
@@ -95,11 +95,11 @@ class ViewController: UIViewController, NSStreamDelegate  {
         //TODO: verifier que la connection a ete etablie avant d'envoyer le message
         
         let size : Int = 7 + monTexte.text!.characters.count
-        let response: String = "!!\(size)!\(monTexte.text!)"
+        let response: String = "!!\(size)!\(monTexte.text!)\n"
         
         monTexte.text = ""
         
-        let data: NSData = response.dataUsingEncoding(NSASCIIStringEncoding)!
+        let data: NSData = response.dataUsingEncoding(NSUTF8StringEncoding)!
         
         self.outputStream.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
         
@@ -167,23 +167,19 @@ class ViewController: UIViewController, NSStreamDelegate  {
         
         //we need to get rid of the begining of the message that contains the size of the package
         // Exemple: !!12!salut  -> salut
-       
-        let splittedMessage = message.characters.split {$0 == "!"}
-
-        for part in splittedMessage{
-            print("!!!!!!!!!!!!!!!debug message---- \(part)")
+        
+        var unwraped = message
+        do {
+             unwraped = try message.unwrapServerMessage()
+        } catch {
+            print(error)
         }
         
-       // print("debug message \(splittedMessage[1])")
-        //print(splittedMessage[2])
-
-
-
         let date = NSDate()
         let formatter = NSDateFormatter()
         formatter.timeStyle = .MediumStyle
         formatter.stringFromDate(date)
-        messages.text! = formatter.stringFromDate(date) + "\t" + message + "\n" + messages.text!
+        messages.text! = formatter.stringFromDate(date) + "\t" + unwraped + "\n" + messages.text!
         
     }
 
@@ -213,3 +209,21 @@ class ViewController: UIViewController, NSStreamDelegate  {
     
     }
 
+
+/**
+* Regex qui detecte et enleve les en-tetes serveur !!21!
+*
+*/
+extension String {
+    func unwrapServerMessage() throws -> String{
+        
+        let regex = try! NSRegularExpression(pattern: "!![0-9]+!", options: [.CaseInsensitive])
+        let range = NSMakeRange(0, self.characters.count)
+        let unwrapedMessage = regex.stringByReplacingMatchesInString(self, options: NSMatchingOptions(rawValue: 0), range: range, withTemplate: "")
+    
+        return unwrapedMessage
+    }
+    
+}
+
+   
