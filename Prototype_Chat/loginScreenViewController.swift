@@ -28,9 +28,7 @@ class loginScreenViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
-
  
     //server information
     @IBOutlet weak var host: UITextField!
@@ -44,19 +42,17 @@ class loginScreenViewController: UIViewController {
         
         // checking for invalid entrys
         if (host.text == nil || host.text!.isEqual("")){
-            warningMessage.text = "-I need the ip address to connect to the host!-"
+            warningMessage.text = "-J'ai besoin de d'un IP pour me connecter au serveur!-"
             warningMessage.hidden = false
-            print("-I need the ip address to connect to the host!-")
         }
         else if(port.text == nil || Int(port.text!) == nil){
-             warningMessage.text = "-If you realy want me to connect, give me the port!-"
+             warningMessage.text = "-On a besoin d'un Port pour qu'une connexion sois effectué!-"
             warningMessage.hidden = false
-            print("-If you realy want me to connect, give me the port!-")
         }
         else if(userName.text == nil || userName.text == ""){
-            warningMessage.text = "-No username? Use your imagination plz!-"
+            warningMessage.text = "-Tu n'a pas de nom!? Utilise ton imagination svp-"
+            
             warningMessage.hidden = false
-            print("-No username? Use your imagination plz!-")
             usernameReminder1.hidden = false
             
         }else if(true){
